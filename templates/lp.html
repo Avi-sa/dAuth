@@ -1,8 +1,7 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="static/css/lp.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<body>
+{% extends 'main.html' %}
+{% load static %}
+
+    {% block body %}
     <div class="header">
     <p class="tmain">DocAuth</p>
     <h4>Comprehensive tool to detect forgery</h4><br><br>
@@ -14,10 +13,10 @@
             
                 <div class="tab">
                     <button class="tablinks" onclick="openCity(event, 'a1')">
-                        <img src="static/assets/ship4.png" class="imgtab"><br>Artificial Intelligence</button>
-                    <button class="tablinks" onclick="openCity(event, 'a2')"><img src="static/assets/control6.png" class="imgtab"><br>Forgery Detection</button>
-                    <button class="tablinks" onclick="openCity(event, 'a3')"><img src="static/assets/check23.png" class="imgtab"><br>High Accuracy</button>
-                    <button class="tablinks" onclick="openCity(event, 'a4')"><img src="static/assets/shield23.png" class="imgtab"><br>Military Standard</button>
+                        <img src="{% static 'assets/ship4.png' %}" class="imgtab"><br>Artificial Intelligence</button>
+                    <button class="tablinks" onclick="openCity(event, 'a2')"><img src="{% static 'assets/control6.png' %}" class="imgtab"><br>Forgery Detection</button>
+                    <button class="tablinks" onclick="openCity(event, 'a3')"><img src="{% static 'assets/check23.png' %}" class="imgtab"><br>High Accuracy</button>
+                    <button class="tablinks" onclick="openCity(event, 'a4')"><img src="{% static 'assets/shield23.png' %}" class="imgtab"><br>Military Standard</button>
                 </div>
 
                 <div id="a1" class="tabcontent">
@@ -56,3 +55,5 @@
                         evt.currentTarget.className += " active";
                     }
                 </script>
+
+{% endblock %}
