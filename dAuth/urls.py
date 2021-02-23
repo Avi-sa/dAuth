@@ -27,6 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', TemplateView.as_view(template_name='lp.html'), name="tst"),
     path('login/', TemplateView.as_view(template_name='login.html'), name="logIn"),
+    path('img/', TemplateView.as_view(template_name='pic.html'), name="pic"),
+
     path('accounts/', include('allauth.urls')),
     path('api/events/', include('profiles.proApi.urls', namespace='profile')),
     path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
