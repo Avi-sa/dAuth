@@ -1,4 +1,5 @@
 let imageUpload = document.getElementById('imageUpload')
+console.log(imageUpload);
 
 
 Promise.all([
@@ -20,15 +21,17 @@ async function start() {
     if (image) image.remove()
     if (canvas) canvas.remove()
     image = await faceapi.bufferToImage(imageUpload.files[0])
-    container.append(image)
+    // container.append(image)
     canvas = faceapi.createCanvasFromMedia(image)
-    container.append(canvas)
+    console.log(canvas)
+    // container.append(canvas)
     const displaySize = { width: image.width, height: image.height }
     faceapi.matchDimensions(canvas, displaySize)
     const detections = await faceapi.detectAllFaces(image).withFaceLandmarks().withFaceDescriptors()
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
     const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
-    console.log(results)
+    console.log(results[0])
+    console.log(results[0]._label)
     results.forEach((result, i) => {
       const box = resizedDetections[i].detection.box
       const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
@@ -53,3 +56,12 @@ function loadLabeledImages() {
     })
   )
 }
+
+var data = JSON.parse("{{data|escapejs}}"); 
+   console.log(data);
+    var dataNode = document.getElementById('alldata'); 
+    dataNode.innerHTML+="{{data|escapejs}}"; 
+    dataNode = document.getElementById('neatdata'); 
+    for(var x in data){ 
+        dataNode.innerHTML+=x+' : '+data[x]+'<br><br>'; 
+    } 
