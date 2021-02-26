@@ -15,12 +15,31 @@
   	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-	  <link rel="stylesheet" href="{% static 'css/lp.css' %}">
+	<link rel="stylesheet" href="{% static 'css/lp.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>	
 	<div class="container-fluid" style="min-height:100%">
+
+
+		<nav>
+			<div class="logo">Welcome Akash!</div>
+	  <input type="checkbox" id="click">
+			<label for="click" class="menu-btn">
+			  <i class="fas fa-bars"></i>
+			</label>
+			<ul>
+
+	  <li><a  href="#">Home</a></li>
+	  <li><a href="#">Contect Us</a></li>
+	
+	  <li><a class="active" href="#">Logout</a></li>
+	  
+	  </ul>
+	  </nav>
         {% block body %}
 		{% endblock %}
     </div>
+
 </body>
 </html>
