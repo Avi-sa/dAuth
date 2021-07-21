@@ -1,2 +1,4 @@
 "# Face-Recognition-JavaScript" 
-"# DocAuth" 
+"# DocAuth"
+Forgery detection
+2 step verification
